@@ -2039,3 +2039,830 @@ body.modal-open {
     }
 
 }
+
+
+/* =========================================================
+   MOBILE RESPONSIVE FIX
+   Optimized for phones and small tablets
+   ========================================================= */
+
+/* Prevent long words/content from causing horizontal overflow */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+    max-width: 100%;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        height: 72px;
+        padding: 0 6%;
+    }
+
+    .nav-menu {
+        gap: 22px;
+    }
+
+    .home-hero {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        min-height: auto;
+        padding: 115px 6% 65px;
+    }
+
+    .home-content,
+    .music-player {
+        max-width: 100%;
+        justify-self: stretch;
+    }
+
+    .about-section,
+    .skills-section,
+    .contact-section,
+    .certificate-section {
+        min-height: auto;
+    }
+
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-photo {
+        order: 0;
+    }
+
+    .about-content {
+        order: 1;
+        max-width: 100%;
+    }
+
+    .about-photo-frame {
+        width: min(300px, 70vw);
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .certificate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- GENERAL ---------- */
+
+    html {
+        scroll-padding-top: 72px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    /* ---------- INTRO ---------- */
+
+    .intro-content {
+        width: min(90%, 420px);
+        padding: 0 5px;
+    }
+
+    .intro-small-text {
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .intro-title {
+        font-size: clamp(42px, 15vw, 64px);
+        letter-spacing: -1.5px;
+    }
+
+    .intro-name {
+        margin-top: 14px;
+        font-size: clamp(17px, 5vw, 24px);
+        letter-spacing: 1px;
+        line-height: 1.35;
+    }
+
+    .loading-container {
+        width: 82%;
+        margin-top: 38px;
+    }
+
+    .loading-info {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: 68px;
+        padding: 0 6%;
+    }
+
+    .nav-logo {
+        font-size: 21px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 6% 16px;
+        background: rgba(2, 8, 23, 0.97);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 13px 4px;
+        font-size: 13px;
+    }
+
+    .nav-menu a::after {
+        display: none;
+    }
+
+    /* ---------- HOME ---------- */
+
+    .home-hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 105px 6% 55px;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-greeting {
+        margin-bottom: 15px;
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .home-content h1 {
+        font-size: clamp(39px, 12vw, 56px);
+        line-height: 1.02;
+        letter-spacing: -2px;
+    }
+
+    .home-content h2 {
+        display: block;
+        margin-top: 20px;
+        font-size: clamp(16px, 4.7vw, 21px);
+        line-height: 1.55;
+    }
+
+    .home-content h2 .separator {
+        margin: 0 7px;
+    }
+
+    .home-description {
+        margin-top: 18px;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .home-buttons {
+        margin-top: 25px;
+    }
+
+    .btn-primary {
+        padding: 12px 19px;
+        font-size: 11px;
+    }
+
+    /* ---------- MUSIC ---------- */
+
+    .music-player {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .music-label {
+        margin-bottom: 7px;
+        font-size: clamp(22px, 7vw, 30px);
+    }
+
+    .music-subtitle {
+        margin-bottom: 17px;
+        font-size: 11px;
+    }
+
+    .music-card {
+        min-height: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 17px;
+        padding: 15px;
+        border-radius: 13px;
+    }
+
+    .music-cover {
+        flex: none;
+        width: min(190px, 62vw);
+        height: min(190px, 62vw);
+        margin: 0 auto;
+        align-self: center;
+    }
+
+    .music-info {
+        width: 100%;
+    }
+
+    .music-artist {
+        margin-bottom: 6px;
+        font-size: 8px;
+        letter-spacing: 5px;
+        text-align: center;
+    }
+
+    .music-info h3 {
+        margin-bottom: 19px;
+        font-size: 21px;
+        text-align: center;
+    }
+
+    .music-controls {
+        gap: 22px;
+        margin-top: 15px;
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    .section {
+        min-height: auto;
+        padding: 60px 6%;
+    }
+
+    .section-label {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    /* ---------- ABOUT ---------- */
+
+    .about-section {
+        padding: 60px 6% 55px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-photo-frame {
+        width: min(270px, 75vw);
+    }
+
+    .about-content .section-label {
+        margin-bottom: 9px;
+    }
+
+    .about-title {
+        font-size: clamp(31px, 9vw, 44px);
+        line-height: 1.08;
+        letter-spacing: -1.5px;
+    }
+
+    .about-description {
+        margin-top: 15px;
+        font-size: 11.5px;
+        line-height: 1.8;
+    }
+
+    .about-info-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 20px;
+        padding: 18px;
+        border-radius: 13px;
+    }
+
+    .about-column-title {
+        gap: 9px;
+        margin-bottom: 16px;
+    }
+
+    .about-column-title h3 {
+        font-size: 15px;
+    }
+
+    .about-icon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .timeline {
+        padding-left: 16px;
+    }
+
+    .timeline-item {
+        padding-left: 13px;
+        padding-bottom: 17px;
+    }
+
+    .timeline-content h4 {
+        font-size: 11px;
+    }
+
+    .timeline-subtitle {
+        font-size: 9px;
+    }
+
+    .timeline-date {
+        font-size: 7px;
+    }
+
+    .about-connect {
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .about-connect-button {
+        padding: 9px 14px;
+        font-size: 9px;
+    }
+
+    .about-socials {
+        gap: 6px;
+    }
+
+    .about-socials a {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* ---------- SKILLS ---------- */
+
+    .skills-section {
+        padding: 60px 6% 55px;
+    }
+
+    .skills-header {
+        margin-bottom: 32px;
+    }
+
+    .skills-title {
+        font-size: clamp(35px, 10vw, 48px);
+        letter-spacing: -1.5px;
+    }
+
+    .skills-subtitle {
+        margin-top: 14px;
+        font-size: 11.5px;
+        line-height: 1.8;
+    }
+
+    .skill-group {
+        margin-bottom: 24px;
+    }
+
+    .skill-category {
+        margin-bottom: 11px;
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .skill-list {
+        gap: 7px;
+    }
+
+    .skill-item {
+        min-height: 40px;
+        gap: 8px;
+        padding: 6px 11px 6px 7px;
+        font-size: 9px;
+    }
+
+    .skill-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .skill-icon iconify-icon {
+        font-size: 17px;
+    }
+
+    /* ---------- PROJECTS ---------- */
+
+    .projects-section {
+        padding: 60px 6% 65px;
+    }
+
+    .projects-header {
+        margin-bottom: 30px;
+    }
+
+    .projects-title {
+        font-size: clamp(35px, 10vw, 48px);
+        letter-spacing: -1.5px;
+    }
+
+    .projects-subtitle {
+        margin-top: 14px;
+        font-size: 11.5px;
+        line-height: 1.8;
+    }
+
+    .project-category {
+        margin-bottom: 42px;
+    }
+
+    .project-category-heading {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .project-category-heading span {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .project-category-heading h3 {
+        font-size: 16px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .project-image {
+        height: auto;
+        aspect-ratio: 16 / 10;
+    }
+
+    .project-number {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 8px;
+    }
+
+    .project-card-content {
+        padding: 17px 16px 18px;
+    }
+
+    .project-type {
+        margin-bottom: 6px;
+        font-size: 7px;
+        letter-spacing: 1.6px;
+    }
+
+    .project-card-content h4 {
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .project-card-content p {
+        min-height: 0;
+        margin-top: 8px;
+        font-size: 9.5px;
+        line-height: 1.7;
+    }
+
+    .project-button {
+        margin-top: 13px;
+        padding: 9px 13px;
+        font-size: 8.5px;
+    }
+
+    .project-actions {
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .project-actions .project-button,
+    .project-icon-button {
+        margin-top: 13px;
+    }
+
+    /* ---------- PROJECT MODAL ---------- */
+
+    .project-modal {
+        padding: 8px;
+    }
+
+    .project-modal .project-detail {
+        width: 100%;
+        max-height: 94vh;
+        border-radius: 11px;
+    }
+
+    .project-modal .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+
+    .project-modal .detail-image {
+        min-height: 190px;
+        max-height: 230px;
+    }
+
+    .project-modal .detail-image img {
+        min-height: 190px;
+        max-height: 230px;
+    }
+
+    .project-modal .detail-content {
+        padding: 27px 17px 22px;
+    }
+
+    .project-modal .detail-label {
+        margin-bottom: 9px;
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .project-modal .detail-content h2 {
+        margin-bottom: 14px;
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .project-modal .detail-description {
+        margin-bottom: 22px;
+        font-size: 10px;
+        line-height: 1.75;
+    }
+
+    .project-modal .detail-columns {
+        grid-template-columns: 1fr;
+        gap: 19px;
+        padding-top: 20px;
+    }
+
+    .project-modal .detail-columns h4 {
+        margin-bottom: 8px;
+        font-size: 11px;
+    }
+
+    .project-modal .detail-columns p {
+        font-size: 9px;
+        line-height: 1.75;
+    }
+
+    .project-modal .technology-list {
+        gap: 5px;
+    }
+
+    .project-modal .technology-list span {
+        padding: 5px 8px;
+        font-size: 7.5px;
+    }
+
+    .project-modal .detail-actions {
+        gap: 7px;
+        margin-top: 22px;
+    }
+
+    .project-modal .detail-action-btn {
+        padding: 9px 13px;
+        font-size: 8.5px;
+    }
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-section {
+        min-height: auto;
+        padding: 65px 6%;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-content {
+        max-width: 100%;
+    }
+
+    .contact-content h2 {
+        font-size: clamp(40px, 12vw, 58px);
+        line-height: 0.98;
+        letter-spacing: -2px;
+    }
+
+    .contact-content h3 {
+        margin-top: 12px;
+        font-size: clamp(16px, 4.8vw, 21px);
+    }
+
+    .contact-content p {
+        margin-top: 19px;
+        font-size: 11.5px;
+        line-height: 1.8;
+    }
+
+    .contact-content p + p {
+        margin-top: 11px;
+    }
+
+    .contact-thanks {
+        margin-top: 16px;
+        font-size: 10px;
+    }
+
+    .contact-links {
+        gap: 10px;
+    }
+
+    .contact-link {
+        min-height: 48px;
+        padding: 0 17px;
+        font-size: 10.5px;
+    }
+
+    .contact-link iconify-icon {
+        font-size: 15px;
+    }
+
+    /* ---------- CERTIFICATE ---------- */
+
+    .certificate-section {
+        min-height: auto;
+        padding: 60px 6% 55px;
+    }
+
+    .certificate-header {
+        margin-bottom: 28px;
+    }
+
+    .certificate-title {
+        font-size: clamp(35px, 10vw, 48px);
+        letter-spacing: -1.5px;
+    }
+
+    .certificate-subtitle {
+        margin-top: 14px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .certificate-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .certificate-card {
+        border-radius: 12px;
+    }
+
+    .certificate-info {
+        min-height: 48px;
+        padding: 0 14px;
+    }
+
+    .certificate-info span {
+        font-size: 8.5px;
+        letter-spacing: 0.5px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding: 23px 6%;
+        font-size: 9px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .home-hero,
+    .about-section,
+    .skills-section,
+    .projects-section,
+    .contact-section,
+    .certificate-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .home-content h1 {
+        font-size: 37px;
+    }
+
+    .home-content h2 {
+        font-size: 15px;
+    }
+
+    .music-cover {
+        width: 165px;
+        height: 165px;
+    }
+
+    .music-card {
+        padding: 13px;
+    }
+
+    .about-title,
+    .skills-title,
+    .projects-title,
+    .certificate-title {
+        font-size: 34px;
+    }
+
+    .skill-item {
+        font-size: 8.5px;
+        padding-right: 9px;
+    }
+
+    .contact-content h2 {
+        font-size: 39px;
+    }
+
+    .contact-link {
+        font-size: 10px;
+        padding: 0 14px;
+    }
+}
+
+/* =========================================================
+   TOUCH DEVICES
+   Disable hover movement that can feel awkward on phones
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .project-card:hover,
+    .skill-item:hover,
+    .about-socials a:hover,
+    .about-connect-button:hover,
+    .contact-link:hover {
+        transform: none;
+    }
+
+    .project-card:hover .project-image img,
+    .certificate-card:hover .certificate-image img,
+    .about-photo-frame:hover img {
+        transform: none;
+    }
+}
