@@ -2040,829 +2040,796 @@ body.modal-open {
 
 }
 
-
 /* =========================================================
-   MOBILE RESPONSIVE FIX
-   Optimized for phones and small tablets
+   FINAL MOBILE / TABLET RESPONSIVE OVERRIDE
+   Designed for phone portrait widths and small tablets.
+   This block intentionally uses !important on layout rules
+   so it also wins over older responsive rules.
    ========================================================= */
 
-/* Prevent long words/content from causing horizontal overflow */
 html,
 body {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+}
+
+body {
+    min-width: 0 !important;
 }
 
 img,
-video,
-svg {
+video {
     max-width: 100%;
 }
 
 /* =========================================================
-   TABLET
+   MOBILE + SMALL TABLET : <= 900px
    ========================================================= */
 
-@media (max-width: 900px) {
-
-    .navbar {
-        height: 72px;
-        padding: 0 6%;
-    }
-
-    .nav-menu {
-        gap: 22px;
-    }
-
-    .home-hero {
-        grid-template-columns: 1fr;
-        gap: 55px;
-        min-height: auto;
-        padding: 115px 6% 65px;
-    }
-
-    .home-content,
-    .music-player {
-        max-width: 100%;
-        justify-self: stretch;
-    }
-
-    .about-section,
-    .skills-section,
-    .contact-section,
-    .certificate-section {
-        min-height: auto;
-    }
-
-    .about-container,
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .about-photo {
-        order: 0;
-    }
-
-    .about-content {
-        order: 1;
-        max-width: 100%;
-    }
-
-    .about-photo-frame {
-        width: min(300px, 70vw);
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card {
-        max-width: 650px;
-        margin: 0 auto;
-    }
-
-    .certificate-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* =========================================================
-   PHONE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    /* ---------- GENERAL ---------- */
-
-    html {
-        scroll-padding-top: 72px;
-    }
-
-    body {
-        font-size: 14px;
-    }
-
-    /* ---------- INTRO ---------- */
-
-    .intro-content {
-        width: min(90%, 420px);
-        padding: 0 5px;
-    }
-
-    .intro-small-text {
-        margin-bottom: 8px;
-        font-size: 10px;
-        letter-spacing: 3px;
-    }
-
-    .intro-title {
-        font-size: clamp(42px, 15vw, 64px);
-        letter-spacing: -1.5px;
-    }
-
-    .intro-name {
-        margin-top: 14px;
-        font-size: clamp(17px, 5vw, 24px);
-        letter-spacing: 1px;
-        line-height: 1.35;
-    }
-
-    .loading-container {
-        width: 82%;
-        margin-top: 38px;
-    }
-
-    .loading-info {
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
+@media screen and (max-width: 900px) {
 
     /* ---------- NAVBAR ---------- */
 
     .navbar {
-        height: 68px;
-        padding: 0 6%;
+        height: 70px !important;
+        padding: 0 24px !important;
     }
 
     .nav-logo {
-        font-size: 21px;
+        font-size: 22px !important;
+        flex-shrink: 0;
     }
 
     .menu-toggle {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         padding: 0;
+        border: 0;
+        background: transparent;
+        color: #ffffff;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .menu-toggle iconify-icon {
+        display: block !important;
+        font-size: 25px;
     }
 
     .nav-menu {
-        position: absolute;
-        top: 68px;
-        left: 0;
-        width: 100%;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 10px 6% 16px;
-        background: rgba(2, 8, 23, 0.97);
-        backdrop-filter: blur(15px);
+        position: absolute !important;
+        top: 70px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+
+        padding: 10px 24px 18px !important;
+        margin: 0 !important;
+
+        background: rgba(2, 8, 23, 0.98) !important;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        z-index: 200;
     }
 
     .nav-menu.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-menu a {
-        width: 100%;
-        padding: 13px 4px;
-        font-size: 13px;
+        display: block !important;
+        width: 100% !important;
+        padding: 14px 4px !important;
+        font-size: 14px !important;
+        line-height: 1.2;
+        color: rgba(255, 255, 255, 0.7);
     }
 
     .nav-menu a::after {
-        display: none;
+        display: none !important;
+    }
+
+    .nav-menu a.active {
+        color: #2879ff !important;
     }
 
     /* ---------- HOME ---------- */
 
     .home-hero {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        gap: 48px;
-        padding: 105px 6% 55px;
+        width: 100% !important;
+        min-height: auto !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        align-items: start !important;
+
+        gap: 50px !important;
+        padding: 105px 24px 65px !important;
     }
 
     .home-content {
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 680px !important;
+        min-width: 0 !important;
     }
 
     .home-greeting {
-        margin-bottom: 15px;
-        font-size: 11px;
-        letter-spacing: 3px;
+        margin-bottom: 16px !important;
+        font-size: 11px !important;
+        letter-spacing: 3px !important;
     }
 
     .home-content h1 {
-        font-size: clamp(39px, 12vw, 56px);
-        line-height: 1.02;
-        letter-spacing: -2px;
+        max-width: 650px;
+        font-size: clamp(42px, 8vw, 64px) !important;
+        line-height: 1.02 !important;
+        letter-spacing: -2.5px !important;
+        overflow-wrap: normal;
     }
 
     .home-content h2 {
-        display: block;
-        margin-top: 20px;
-        font-size: clamp(16px, 4.7vw, 21px);
-        line-height: 1.55;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 0 !important;
+        margin-top: 20px !important;
+        font-size: clamp(18px, 3vw, 23px) !important;
+        line-height: 1.5 !important;
     }
 
     .home-content h2 .separator {
-        margin: 0 7px;
+        margin: 0 10px !important;
     }
 
     .home-description {
-        margin-top: 18px;
-        font-size: 12px;
-        line-height: 1.8;
+        max-width: 620px !important;
+        margin-top: 18px !important;
+        font-size: 12px !important;
+        line-height: 1.8 !important;
     }
 
     .home-buttons {
-        margin-top: 25px;
+        margin-top: 24px !important;
     }
 
     .btn-primary {
-        padding: 12px 19px;
-        font-size: 11px;
+        padding: 12px 19px !important;
+        font-size: 10px !important;
     }
 
     /* ---------- MUSIC ---------- */
 
     .music-player {
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 680px !important;
+        justify-self: stretch !important;
+        min-width: 0 !important;
     }
 
     .music-label {
-        margin-bottom: 7px;
-        font-size: clamp(22px, 7vw, 30px);
+        margin-bottom: 7px !important;
+        font-size: clamp(25px, 5vw, 32px) !important;
+        line-height: 1.2 !important;
     }
 
     .music-subtitle {
-        margin-bottom: 17px;
-        font-size: 11px;
+        margin-bottom: 17px !important;
+        font-size: 11px !important;
     }
 
     .music-card {
-        min-height: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 17px;
-        padding: 15px;
-        border-radius: 13px;
+        width: 100% !important;
+        min-height: 0 !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+
+        gap: 18px !important;
+        padding: 16px !important;
+        border-radius: 14px !important;
     }
 
     .music-cover {
-        flex: none;
-        width: min(190px, 62vw);
-        height: min(190px, 62vw);
-        margin: 0 auto;
-        align-self: center;
+        flex: 0 0 150px !important;
+        width: 150px !important;
+        height: 150px !important;
+        margin: 0 !important;
     }
 
     .music-info {
-        width: 100%;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
     }
 
     .music-artist {
-        margin-bottom: 6px;
-        font-size: 8px;
-        letter-spacing: 5px;
-        text-align: center;
+        margin-bottom: 6px !important;
+        font-size: 7px !important;
+        letter-spacing: 4px !important;
     }
 
     .music-info h3 {
-        margin-bottom: 19px;
-        font-size: 21px;
-        text-align: center;
+        margin-bottom: 18px !important;
+        font-size: 20px !important;
     }
 
     .music-controls {
-        gap: 22px;
-        margin-top: 15px;
+        gap: 18px !important;
+        margin-top: 15px !important;
     }
 
-    /* ---------- SECTIONS ---------- */
+    /* ---------- ALL SECTIONS ---------- */
 
     .section {
-        min-height: auto;
-        padding: 60px 6%;
-    }
-
-    .section-label {
-        font-size: 9px;
-        letter-spacing: 2.5px;
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 70px 24px !important;
     }
 
     /* ---------- ABOUT ---------- */
 
     .about-section {
-        padding: 60px 6% 55px;
+        width: 100% !important;
+        min-height: auto !important;
+        display: block !important;
+        padding: 70px 24px 65px !important;
     }
 
     .about-container {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    .about-photo {
+        width: 100% !important;
+        justify-content: center !important;
+        order: 0 !important;
     }
 
     .about-photo-frame {
-        width: min(270px, 75vw);
+        width: min(230px, 65vw) !important;
+        max-width: 230px !important;
+        margin: 0 auto !important;
+    }
+
+    .about-content {
+        width: 100% !important;
+        max-width: 680px !important;
+        order: 1 !important;
+        min-width: 0 !important;
     }
 
     .about-content .section-label {
-        margin-bottom: 9px;
+        margin-bottom: 10px !important;
     }
 
     .about-title {
-        font-size: clamp(31px, 9vw, 44px);
-        line-height: 1.08;
-        letter-spacing: -1.5px;
+        font-size: clamp(34px, 7vw, 52px) !important;
+        line-height: 1.08 !important;
+        letter-spacing: -1.8px !important;
     }
 
     .about-description {
-        margin-top: 15px;
-        font-size: 11.5px;
-        line-height: 1.8;
+        max-width: 680px !important;
+        margin-top: 16px !important;
+        font-size: 12px !important;
+        line-height: 1.8 !important;
     }
 
     .about-info-card {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        margin-top: 20px;
-        padding: 18px;
-        border-radius: 13px;
+        width: 100% !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 22px !important;
+        margin-top: 22px !important;
+        padding: 20px !important;
+        border-radius: 14px !important;
+    }
+
+    .about-column {
+        min-width: 0 !important;
     }
 
     .about-column-title {
-        gap: 9px;
-        margin-bottom: 16px;
+        gap: 8px !important;
+        margin-bottom: 18px !important;
     }
 
     .about-column-title h3 {
-        font-size: 15px;
+        font-size: 15px !important;
     }
 
     .about-icon {
-        width: 31px;
-        height: 31px;
+        width: 31px !important;
+        height: 31px !important;
+        flex-shrink: 0 !important;
     }
 
     .timeline {
-        padding-left: 16px;
+        padding-left: 15px !important;
     }
 
     .timeline-item {
-        padding-left: 13px;
-        padding-bottom: 17px;
+        padding-left: 12px !important;
+        padding-bottom: 18px !important;
     }
 
     .timeline-content h4 {
-        font-size: 11px;
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+        overflow-wrap: anywhere;
     }
 
     .timeline-subtitle {
-        font-size: 9px;
+        font-size: 8.5px !important;
+        line-height: 1.55 !important;
     }
 
     .timeline-date {
-        font-size: 7px;
+        font-size: 7px !important;
     }
 
     .about-connect {
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 18px;
-    }
-
-    .about-connect-button {
-        padding: 9px 14px;
-        font-size: 9px;
-    }
-
-    .about-socials {
-        gap: 6px;
-    }
-
-    .about-socials a {
-        width: 32px;
-        height: 32px;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
     }
 
     /* ---------- SKILLS ---------- */
 
     .skills-section {
-        padding: 60px 6% 55px;
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 70px 24px !important;
+        display: block !important;
+    }
+
+    .skills-container {
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
     }
 
     .skills-header {
-        margin-bottom: 32px;
+        margin-bottom: 35px !important;
     }
 
     .skills-title {
-        font-size: clamp(35px, 10vw, 48px);
-        letter-spacing: -1.5px;
+        font-size: clamp(38px, 8vw, 58px) !important;
+        line-height: 1 !important;
     }
 
     .skills-subtitle {
-        margin-top: 14px;
-        font-size: 11.5px;
-        line-height: 1.8;
+        max-width: 650px !important;
+        margin-top: 15px !important;
+        font-size: 11.5px !important;
+        line-height: 1.8 !important;
     }
 
     .skill-group {
-        margin-bottom: 24px;
-    }
-
-    .skill-category {
-        margin-bottom: 11px;
-        font-size: 8px;
-        letter-spacing: 2px;
+        margin-bottom: 26px !important;
     }
 
     .skill-list {
-        gap: 7px;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
     }
 
     .skill-item {
-        min-height: 40px;
-        gap: 8px;
-        padding: 6px 11px 6px 7px;
-        font-size: 9px;
-    }
-
-    .skill-icon {
-        width: 25px;
-        height: 25px;
-    }
-
-    .skill-icon iconify-icon {
-        font-size: 17px;
+        min-height: 42px !important;
+        padding: 6px 11px 6px 7px !important;
+        font-size: 9px !important;
     }
 
     /* ---------- PROJECTS ---------- */
 
     .projects-section {
-        padding: 60px 6% 65px;
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 70px 24px 75px !important;
+    }
+
+    .projects-container {
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
     }
 
     .projects-header {
-        margin-bottom: 30px;
+        margin-bottom: 42px !important;
     }
 
     .projects-title {
-        font-size: clamp(35px, 10vw, 48px);
-        letter-spacing: -1.5px;
+        font-size: clamp(38px, 8vw, 58px) !important;
+        line-height: 1.02 !important;
+        letter-spacing: -1.8px !important;
     }
 
     .projects-subtitle {
-        margin-top: 14px;
-        font-size: 11.5px;
-        line-height: 1.8;
+        max-width: 650px !important;
+        margin-top: 15px !important;
+        font-size: 11.5px !important;
+        line-height: 1.8 !important;
     }
 
     .project-category {
-        margin-bottom: 42px;
+        margin-bottom: 48px !important;
     }
 
     .project-category-heading {
-        gap: 10px;
-        margin-bottom: 15px;
+        gap: 12px !important;
+        margin-bottom: 18px !important;
     }
 
     .project-category-heading span {
-        font-size: 8px;
-        letter-spacing: 1.5px;
+        font-size: 9px !important;
     }
 
     .project-category-heading h3 {
-        font-size: 16px;
+        font-size: 19px !important;
     }
 
+    /* ONE CARD PER ROW — important for phone/tablet */
     .project-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        justify-content: stretch !important;
+        gap: 20px !important;
     }
 
     .project-card {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 12px;
+        width: 100% !important;
+        max-width: 680px !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
     }
 
     .project-image {
-        height: auto;
-        aspect-ratio: 16 / 10;
-    }
-
-    .project-number {
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        font-size: 8px;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 10 !important;
     }
 
     .project-card-content {
-        padding: 17px 16px 18px;
-    }
-
-    .project-type {
-        margin-bottom: 6px;
-        font-size: 7px;
-        letter-spacing: 1.6px;
+        padding: 20px 20px 22px !important;
     }
 
     .project-card-content h4 {
-        font-size: 14px;
-        line-height: 1.45;
+        font-size: 17px !important;
+        line-height: 1.4 !important;
     }
 
     .project-card-content p {
-        min-height: 0;
-        margin-top: 8px;
-        font-size: 9.5px;
-        line-height: 1.7;
-    }
-
-    .project-button {
-        margin-top: 13px;
-        padding: 9px 13px;
-        font-size: 8.5px;
-    }
-
-    .project-actions {
-        flex-wrap: wrap;
-        gap: 7px;
-    }
-
-    .project-actions .project-button,
-    .project-icon-button {
-        margin-top: 13px;
-    }
-
-    /* ---------- PROJECT MODAL ---------- */
-
-    .project-modal {
-        padding: 8px;
-    }
-
-    .project-modal .project-detail {
-        width: 100%;
-        max-height: 94vh;
-        border-radius: 11px;
-    }
-
-    .project-modal .modal-close {
-        top: 10px;
-        right: 10px;
-        width: 34px;
-        height: 34px;
-        font-size: 20px;
-    }
-
-    .project-modal .detail-image {
-        min-height: 190px;
-        max-height: 230px;
-    }
-
-    .project-modal .detail-image img {
-        min-height: 190px;
-        max-height: 230px;
-    }
-
-    .project-modal .detail-content {
-        padding: 27px 17px 22px;
-    }
-
-    .project-modal .detail-label {
-        margin-bottom: 9px;
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
-
-    .project-modal .detail-content h2 {
-        margin-bottom: 14px;
-        font-size: 22px;
-        line-height: 1.25;
-    }
-
-    .project-modal .detail-description {
-        margin-bottom: 22px;
-        font-size: 10px;
-        line-height: 1.75;
-    }
-
-    .project-modal .detail-columns {
-        grid-template-columns: 1fr;
-        gap: 19px;
-        padding-top: 20px;
-    }
-
-    .project-modal .detail-columns h4 {
-        margin-bottom: 8px;
-        font-size: 11px;
-    }
-
-    .project-modal .detail-columns p {
-        font-size: 9px;
-        line-height: 1.75;
-    }
-
-    .project-modal .technology-list {
-        gap: 5px;
-    }
-
-    .project-modal .technology-list span {
-        padding: 5px 8px;
-        font-size: 7.5px;
-    }
-
-    .project-modal .detail-actions {
-        gap: 7px;
-        margin-top: 22px;
-    }
-
-    .project-modal .detail-action-btn {
-        padding: 9px 13px;
-        font-size: 8.5px;
+        min-height: 0 !important;
+        margin-top: 9px !important;
+        font-size: 10.5px !important;
+        line-height: 1.75 !important;
     }
 
     /* ---------- CONTACT ---------- */
 
     .contact-section {
-        min-height: auto;
-        padding: 65px 6%;
+        width: 100% !important;
+        min-height: auto !important;
+        display: block !important;
+        padding: 75px 24px !important;
     }
 
     .contact-container {
-        grid-template-columns: 1fr;
-        gap: 35px;
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
     }
 
     .contact-content {
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 680px !important;
     }
 
     .contact-content h2 {
-        font-size: clamp(40px, 12vw, 58px);
-        line-height: 0.98;
-        letter-spacing: -2px;
+        font-size: clamp(44px, 9vw, 64px) !important;
+        line-height: 0.98 !important;
+        letter-spacing: -2.2px !important;
     }
 
     .contact-content h3 {
-        margin-top: 12px;
-        font-size: clamp(16px, 4.8vw, 21px);
+        font-size: 18px !important;
     }
 
     .contact-content p {
-        margin-top: 19px;
-        font-size: 11.5px;
-        line-height: 1.8;
-    }
-
-    .contact-content p + p {
-        margin-top: 11px;
-    }
-
-    .contact-thanks {
-        margin-top: 16px;
-        font-size: 10px;
+        max-width: 680px !important;
+        font-size: 11.5px !important;
+        line-height: 1.8 !important;
     }
 
     .contact-links {
-        gap: 10px;
+        width: 100% !important;
     }
 
     .contact-link {
-        min-height: 48px;
-        padding: 0 17px;
-        font-size: 10.5px;
-    }
-
-    .contact-link iconify-icon {
-        font-size: 15px;
+        min-height: 50px !important;
+        padding: 0 18px !important;
+        font-size: 11px !important;
     }
 
     /* ---------- CERTIFICATE ---------- */
 
     .certificate-section {
-        min-height: auto;
-        padding: 60px 6% 55px;
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 70px 24px 65px !important;
+        display: block !important;
+    }
+
+    .certificate-container {
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
     }
 
     .certificate-header {
-        margin-bottom: 28px;
+        margin-bottom: 32px !important;
     }
 
     .certificate-title {
-        font-size: clamp(35px, 10vw, 48px);
-        letter-spacing: -1.5px;
+        font-size: clamp(38px, 8vw, 58px) !important;
+        line-height: 1 !important;
     }
 
     .certificate-subtitle {
-        margin-top: 14px;
-        font-size: 11px;
-        line-height: 1.8;
+        max-width: 650px !important;
+        font-size: 11.5px !important;
+        line-height: 1.8 !important;
     }
 
     .certificate-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        width: 100% !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
     }
 
     .certificate-card {
-        border-radius: 12px;
+        width: 100% !important;
     }
 
-    .certificate-info {
-        min-height: 48px;
-        padding: 0 14px;
+    /* ---------- MODAL ---------- */
+
+    .project-modal {
+        padding: 12px !important;
     }
 
-    .certificate-info span {
-        font-size: 8.5px;
-        letter-spacing: 0.5px;
+    .project-modal .project-detail {
+        width: 100% !important;
+        max-width: 680px !important;
+        max-height: 94vh !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .project-modal .detail-image {
+        min-height: 220px !important;
+        max-height: 300px !important;
+    }
+
+    .project-modal .detail-image img {
+        min-height: 220px !important;
+        max-height: 300px !important;
+    }
+
+    .project-modal .detail-content {
+        padding: 32px 22px 25px !important;
+    }
+
+    .project-modal .detail-columns {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
     }
 
     /* ---------- FOOTER ---------- */
 
     .footer {
-        padding: 23px 6%;
-        font-size: 9px;
-        line-height: 1.6;
-    }
-}
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .navbar {
-        padding: 0 5%;
+        padding: 25px 24px !important;
+        font-size: 9px !important;
+        line-height: 1.6 !important;
     }
 
-    .home-hero,
-    .about-section,
-    .skills-section,
-    .projects-section,
-    .contact-section,
-    .certificate-section {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .home-content h1 {
-        font-size: 37px;
-    }
-
-    .home-content h2 {
-        font-size: 15px;
-    }
-
-    .music-cover {
-        width: 165px;
-        height: 165px;
-    }
-
-    .music-card {
-        padding: 13px;
-    }
-
-    .about-title,
-    .skills-title,
-    .projects-title,
-    .certificate-title {
-        font-size: 34px;
-    }
-
-    .skill-item {
-        font-size: 8.5px;
-        padding-right: 9px;
-    }
-
-    .contact-content h2 {
-        font-size: 39px;
-    }
-
-    .contact-link {
-        font-size: 10px;
-        padding: 0 14px;
-    }
-}
-
-/* =========================================================
-   TOUCH DEVICES
-   Disable hover movement that can feel awkward on phones
-   ========================================================= */
-
-@media (hover: none) and (pointer: coarse) {
+    /* ---------- TOUCH ---------- */
 
     .project-card:hover,
     .skill-item:hover,
+    .contact-link:hover,
     .about-socials a:hover,
-    .about-connect-button:hover,
-    .contact-link:hover {
-        transform: none;
+    .about-connect-button:hover {
+        transform: none !important;
     }
 
     .project-card:hover .project-image img,
     .certificate-card:hover .certificate-image img,
     .about-photo-frame:hover img {
-        transform: none;
+        transform: none !important;
+    }
+}
+
+/* =========================================================
+   PHONE : <= 600px
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    .navbar {
+        padding: 0 18px !important;
+    }
+
+    .nav-menu {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .home-hero {
+        gap: 42px !important;
+        padding: 100px 18px 55px !important;
+    }
+
+    .home-content h1 {
+        font-size: clamp(40px, 12vw, 55px) !important;
+        letter-spacing: -2.2px !important;
+    }
+
+    .home-content h2 {
+        font-size: 17px !important;
+    }
+
+    .home-description {
+        font-size: 11.5px !important;
+    }
+
+    .music-card {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 15px !important;
+        gap: 16px !important;
+    }
+
+    .music-cover {
+        width: min(190px, 58vw) !important;
+        height: min(190px, 58vw) !important;
+        flex-basis: auto !important;
+        align-self: center !important;
+        margin: 0 auto !important;
+    }
+
+    .music-info {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .music-artist {
+        text-align: center !important;
+    }
+
+    .music-info h3 {
+        text-align: center !important;
+        font-size: 21px !important;
+    }
+
+    .music-progress-container,
+    .music-time {
+        width: 100% !important;
+    }
+
+    .section,
+    .about-section,
+    .skills-section,
+    .projects-section,
+    .contact-section,
+    .certificate-section {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .about-container {
+        gap: 28px !important;
+    }
+
+    .about-photo-frame {
+        width: min(210px, 60vw) !important;
+    }
+
+    .about-title {
+        font-size: clamp(32px, 9.5vw, 46px) !important;
+    }
+
+    .about-info-card {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        padding: 18px !important;
+    }
+
+    .skills-title,
+    .projects-title,
+    .certificate-title {
+        font-size: clamp(36px, 10vw, 50px) !important;
+    }
+
+    .project-grid {
+        gap: 17px !important;
+    }
+
+    .project-card-content {
+        padding: 17px 16px 19px !important;
+    }
+
+    .project-card-content h4 {
+        font-size: 15px !important;
+    }
+
+    .contact-content h2 {
+        font-size: clamp(40px, 12vw, 56px) !important;
+    }
+
+    .contact-link {
+        min-height: 48px !important;
+        font-size: 10px !important;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONES : <= 380px
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    .navbar {
+        padding: 0 15px !important;
+    }
+
+    .home-hero {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .section,
+    .about-section,
+    .skills-section,
+    .projects-section,
+    .contact-section,
+    .certificate-section {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .home-content h1 {
+        font-size: 38px !important;
+    }
+
+    .music-cover {
+        width: 170px !important;
+        height: 170px !important;
+    }
+
+    .project-card-content h4 {
+        font-size: 14px !important;
     }
 }
