@@ -2069,61 +2069,56 @@ video {
 
 @media screen and (max-width: 900px) {
 
-    /* ---------- NAVBAR ---------- */
+    /* ---------- NAVBAR - NO HAMBURGER ---------- */
 
     .navbar {
         height: 70px !important;
-        padding: 0 24px !important;
+        padding: 0 22px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 12px !important;
     }
 
     .nav-logo {
         font-size: 22px !important;
-        flex-shrink: 0;
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
     }
 
+    /* Hamburger is intentionally disabled */
     .menu-toggle {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        color: #ffffff;
-        cursor: pointer;
-        flex-shrink: 0;
+        display: none !important;
     }
 
     .menu-toggle iconify-icon {
-        display: block !important;
-        font-size: 25px;
+        display: none !important;
     }
 
+    /* Navigation stays visible on mobile */
     .nav-menu {
-        position: absolute !important;
-        top: 70px !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: auto !important;
         height: auto !important;
 
-        display: none !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 0 !important;
+        display: flex !important;
+        flex: 1 1 auto !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 18px !important;
 
-        padding: 10px 24px 18px !important;
+        padding: 0 !important;
         margin: 0 !important;
 
-        background: rgba(2, 8, 23, 0.98) !important;
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-
-        border-top: 1px solid rgba(255, 255, 255, 0.04);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-        z-index: 200;
+        background: transparent !important;
+        border: 0 !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        overflow: visible !important;
     }
 
     .nav-menu.active {
@@ -2131,20 +2126,25 @@ video {
     }
 
     .nav-menu a {
-        display: block !important;
-        width: 100% !important;
-        padding: 14px 4px !important;
-        font-size: 14px !important;
-        line-height: 1.2;
-        color: rgba(255, 255, 255, 0.7);
+        display: inline-block !important;
+        width: auto !important;
+        padding: 5px 0 !important;
+        margin: 0 !important;
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        color: rgba(255, 255, 255, 0.68) !important;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        color: #2879ff !important;
     }
 
     .nav-menu a::after {
-        display: none !important;
-    }
-
-    .nav-menu a.active {
-        color: #2879ff !important;
+        display: block !important;
+        bottom: -5px !important;
+        height: 1px !important;
     }
 
     /* ---------- HOME ---------- */
@@ -2679,12 +2679,20 @@ video {
 @media screen and (max-width: 600px) {
 
     .navbar {
-        padding: 0 18px !important;
+        padding: 0 16px !important;
+        gap: 8px !important;
+    }
+
+    .nav-logo {
+        font-size: 19px !important;
     }
 
     .nav-menu {
-        padding-left: 18px !important;
-        padding-right: 18px !important;
+        gap: 11px !important;
+    }
+
+    .nav-menu a {
+        font-size: 9px !important;
     }
 
     .home-hero {
@@ -2802,7 +2810,20 @@ video {
 @media screen and (max-width: 380px) {
 
     .navbar {
-        padding: 0 15px !important;
+        padding: 0 11px !important;
+        gap: 5px !important;
+    }
+
+    .nav-logo {
+        font-size: 17px !important;
+    }
+
+    .nav-menu {
+        gap: 7px !important;
+    }
+
+    .nav-menu a {
+        font-size: 7.5px !important;
     }
 
     .home-hero {
@@ -2831,5 +2852,116 @@ video {
 
     .project-card-content h4 {
         font-size: 14px !important;
+    }
+}
+
+/* =========================================================
+   FINAL NAVBAR FIX - NEVER USE HAMBURGER ON MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        height: 68px !important;
+        padding: 0 18px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        overflow: visible !important;
+    }
+
+    .nav-logo {
+        flex: 0 0 auto !important;
+        font-size: 21px !important;
+        white-space: nowrap !important;
+    }
+
+    /* REMOVE HAMBURGER COMPLETELY */
+    .menu-toggle,
+    .menu-toggle *,
+    button.menu-toggle,
+    [class*="menu-toggle"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* SHOW NAVIGATION DIRECTLY */
+    .nav-menu,
+    .nav-menu.active {
+        position: static !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        height: auto !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 13px !important;
+        padding: 0 !important;
+        margin: 0 0 0 auto !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        overflow: visible !important;
+    }
+
+    .nav-menu a {
+        display: inline-block !important;
+        width: auto !important;
+        padding: 4px 0 !important;
+        margin: 0 !important;
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        padding: 0 14px !important;
+    }
+
+    .nav-logo {
+        font-size: 19px !important;
+    }
+
+    .nav-menu,
+    .nav-menu.active {
+        gap: 9px !important;
+    }
+
+    .nav-menu a {
+        font-size: 8px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navbar {
+        padding: 0 10px !important;
+    }
+
+    .nav-logo {
+        font-size: 17px !important;
+    }
+
+    .nav-menu,
+    .nav-menu.active {
+        gap: 6px !important;
+    }
+
+    .nav-menu a {
+        font-size: 7px !important;
     }
 }
